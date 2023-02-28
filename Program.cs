@@ -70,7 +70,7 @@ static TrainingProgram GetTrainingProgram()
     Console.WriteLine("Service 3 -Service Dog");
     Console.WriteLine("Service 4 -Behavior Moification\n\n");
     Console.WriteLine("For service type, please enter the corresponding number above.");
-    Console.WriteLine("e.g. For Service Dog, enter 3.");
+    Console.WriteLine("e.g. For Service Dog, enter 3.\n");
 
     string myoptions;
     myoptions = Console.ReadLine();
@@ -120,14 +120,7 @@ static TrainingProgram GetTrainingProgram()
 
 }
 
-Console.WriteLine("                                               ****Information Confirmed****");
-Console.WriteLine($"\n\n\nCustomer Name: {myCustomer.Name}");
-Console.WriteLine($"Email: {myCustomer.Email}");
-Console.WriteLine($"Phone: {myCustomer.Phone}");
-Console.WriteLine($"Furbaby's Age: {furBaby.Age}");
-Console.WriteLine($"Furbaby's Name: {furBaby.Name}");
-Console.WriteLine($"Training Service: {trainingProgram.Service}");
-Console.WriteLine($"Training Environment: {trainingProgram.Environment}");
+
 
 
 
@@ -137,7 +130,7 @@ static InfoConfirmation GetInfoConfirmation()
 {
     InfoConfirmation infoConfirmation = new InfoConfirmation();
 
-    Console.WriteLine("\n\nPlease Confirm your information by typing Y or N");
+    Console.WriteLine("\n\nPlease Confirm your information entered above by typing Y or N");
 
     string userconfirm;
     userconfirm = Console.ReadLine();
@@ -156,6 +149,14 @@ static InfoConfirmation GetInfoConfirmation()
     return infoConfirmation;
 }
 
+Console.WriteLine("\n\n\n\n                                               ****Information Confirmed****");
+Console.WriteLine($"\n\n\nCustomer Name: {myCustomer.Name}");
+Console.WriteLine($"Email: {myCustomer.Email}");
+Console.WriteLine($"Phone: {myCustomer.Phone}");
+Console.WriteLine($"Furbaby's Age: {furBaby.Age}");
+Console.WriteLine($"Furbaby's Name: {furBaby.Name}");
+Console.WriteLine($"Training Service: {trainingProgram.Service}");
+Console.WriteLine($"Training Environment: {trainingProgram.Environment}\n");
 
 Console.WriteLine("\n\nThank you for providing your information.");
 Console.WriteLine("\nWe will be in contact within the next 24 hours to schedule your furbaby's training.");
