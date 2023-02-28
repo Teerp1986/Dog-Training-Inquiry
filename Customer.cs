@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Some_Practice
+namespace InquiryForm
 {
     public class Customer
     {
@@ -14,5 +14,7 @@ namespace Some_Practice
         public string Email { get; set; }
         public string Phone { get; set; }
         public FurBaby FurBaby { get; set; }
+
+        public InfoConfirmation InfoConfirmation { get; set; }
     }
 }

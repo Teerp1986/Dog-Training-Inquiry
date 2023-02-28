@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Some_Practice
+namespace InquiryForm
 {
     public class TrainingProgram
     {
