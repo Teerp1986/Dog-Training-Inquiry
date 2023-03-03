@@ -8,7 +8,6 @@ namespace InquiryForm
 {
     public class InfoConfirmation
     {
-        public string Answer1 { get; set; }
-        public string Answer2 { get; set; }
+        public bool Answer { get; set; }
     }
 }

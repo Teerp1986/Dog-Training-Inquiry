@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tonika Price\\source\\repos\\Inquiry Form\\Inquiry Form.csproj": {}
+    "C:\\Users\\Tonika Price\\OneDrive\\Desktop\\repos\\Inquiry Form\\Inquiry Form.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tonika Price\\source\\repos\\Inquiry Form\\Inquiry Form.csproj": {
+    "C:\\Users\\Tonika Price\\OneDrive\\Desktop\\repos\\Inquiry Form\\Inquiry Form.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tonika Price\\source\\repos\\Inquiry Form\\Inquiry Form.csproj",
+        "projectUniqueName": "C:\\Users\\Tonika Price\\OneDrive\\Desktop\\repos\\Inquiry Form\\Inquiry Form.csproj",
         "projectName": "Inquiry Form",
-        "projectPath": "C:\\Users\\Tonika Price\\source\\repos\\Inquiry Form\\Inquiry Form.csproj",
+        "projectPath": "C:\\Users\\Tonika Price\\OneDrive\\Desktop\\repos\\Inquiry Form\\Inquiry Form.csproj",
         "packagesPath": "C:\\Users\\Tonika Price\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tonika Price\\source\\repos\\Inquiry Form\\obj\\",
+        "outputPath": "C:\\Users\\Tonika Price\\OneDrive\\Desktop\\repos\\Inquiry Form\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -7,24 +7,54 @@ using System.Transactions;
 using System.Xml.Linq;
 
 
-Console.WriteLine("Hey There!\n");
+const int MAX_ATTEMPTS = 2;
+var attempts = 0;
+while(attempts < MAX_ATTEMPTS)
+{
+    Console.WriteLine("Hey There!\n");
 
-Console.WriteLine("Welcome to Pawsitivty Dog Training!\n");
+    Console.WriteLine("Welcome to Pawsitivty Dog Training!\n");
 
-Console.WriteLine("Let's get started with some basic information!\n\n");
+    Console.WriteLine("Let's get started with some basic information!\n\n");
 
 
-Customer myCustomer = GetCustomer();
+    Customer myCustomer = GetCustomer();
 
-FurBaby furBaby = GetFurBaby();
-myCustomer.FurBaby= furBaby;
+    FurBaby furBaby = GetFurBaby();
+    myCustomer.FurBaby = furBaby;
 
-TrainingProgram trainingProgram = GetTrainingProgram();
-furBaby.TrainingProgram= trainingProgram;
+    TrainingProgram trainingProgram = GetTrainingProgram();
+    furBaby.TrainingProgram = trainingProgram;
 
-InfoConfirmation infoConfirmation = GetInfoConfirmation();
-Console.WriteLine();
-myCustomer.InfoConfirmation= infoConfirmation;
+    InfoConfirmation infoConfirmation = GetInfoConfirmation();
+    Console.WriteLine();
+    myCustomer.InfoConfirmation = infoConfirmation;
+
+    if (myCustomer.InfoConfirmation.Answer)
+    {
+        Output(myCustomer);
+        break;
+    }
+    else
+    {
+        Console.WriteLine("press 0 to exit OR ANY KEY TO CONTINUE");
+        var input = Console.ReadLine();
+        if (input == "0")
+        {
+            return;
+        }
+        Console.WriteLine("Please review and make changes.");
+    }
+    
+    attempts++;
+
+    if(attempts == MAX_ATTEMPTS)
+    {
+        Console.WriteLine("NOPE. YOU'RE DONE. GET OUT!");
+    }
+    
+}
+
 
 
 static Customer GetCustomer()
@@ -42,6 +72,8 @@ static Customer GetCustomer()
 
     return customer;
 }
+
+
 static FurBaby GetFurBaby()
 {
     FurBaby furBaby = new FurBaby();
@@ -71,6 +103,7 @@ static TrainingProgram GetTrainingProgram()
     Console.WriteLine("Service 4 -Behavior Moification\n\n");
     Console.WriteLine("For service type, please enter the corresponding number above.");
     Console.WriteLine("e.g. For Service Dog, enter 3.\n");
+
 
     string myoptions;
     myoptions = Console.ReadLine();
@@ -116,48 +149,31 @@ static TrainingProgram GetTrainingProgram()
             break;
     }
     return trainingProgram;
-
-
 }
 
 
-
-
-
-static InfoConfirmation GetInfoConfirmation() 
-
-
+static InfoConfirmation GetInfoConfirmation()
 {
     InfoConfirmation infoConfirmation = new InfoConfirmation();
 
     Console.WriteLine("\n\nPlease Confirm your information entered above by typing Y or N");
 
-    string userconfirm;
-    userconfirm = Console.ReadLine();
-    switch (userconfirm.ToLower()) 
-    {
-        case "Y":
-            Console.WriteLine();
-            infoConfirmation.Answer1 = "Y";
-            break;
-
-        case "N":
-            Console.WriteLine();
-            infoConfirmation.Answer2 = "N";
-            break;
-    }
+    infoConfirmation.Answer = Console.ReadLine().ToUpper() == "Y";
+    
     return infoConfirmation;
 }
+static void Output(Customer myCustomer)
+{
+    Console.WriteLine("\n\n\n\n                                               ****Information Confirmed****");
+    Console.WriteLine($"\n\n\nCustomer Name: {myCustomer.Name}");
+    Console.WriteLine($"Email: {myCustomer.Email}");
+    Console.WriteLine($"Phone: {myCustomer.Phone}");
+    Console.WriteLine($"Furbaby's Age: {myCustomer.FurBaby.Age}");
+    Console.WriteLine($"Furbaby's Name: {myCustomer.FurBaby.Name}");
+    Console.WriteLine($"Training Service: {myCustomer.FurBaby.TrainingProgram.Service}");
+    Console.WriteLine($"Training Environment: {myCustomer.FurBaby.TrainingProgram.Environment}\n");
 
-Console.WriteLine("\n\n\n\n                                               ****Information Confirmed****");
-Console.WriteLine($"\n\n\nCustomer Name: {myCustomer.Name}");
-Console.WriteLine($"Email: {myCustomer.Email}");
-Console.WriteLine($"Phone: {myCustomer.Phone}");
-Console.WriteLine($"Furbaby's Age: {furBaby.Age}");
-Console.WriteLine($"Furbaby's Name: {furBaby.Name}");
-Console.WriteLine($"Training Service: {trainingProgram.Service}");
-Console.WriteLine($"Training Environment: {trainingProgram.Environment}\n");
-
-Console.WriteLine("\n\nThank you for providing your information.");
-Console.WriteLine("\nWe will be in contact within the next 24 hours to schedule your furbaby's training.");
-Console.WriteLine("\nWe look forward to meeting you both!\n\n\n\n");
+    Console.WriteLine("\n\nThank you for providing your information.");
+    Console.WriteLine("\nWe will be in contact within the next 24 hours to schedule your furbaby's training.");
+    Console.WriteLine("\nWe look forward to meeting you both!\n\n\n\n");
+}
